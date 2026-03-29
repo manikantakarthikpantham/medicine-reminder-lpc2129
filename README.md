@@ -2,6 +2,9 @@
 
 ![Title](title.png)
 
+> 📟 The above display shows a scrolling message:  
+> **"USER CONFIGURABLE MEDICINE REMINDER SYSTEM"**
+
 An embedded system using LPC2148 that provides real-time medicine reminders with interrupt-based control, LCD interface, and buzzer alerts for reliable and user-friendly operation.
 
 ---
@@ -14,71 +17,75 @@ The User Configurable Medicine Reminder System is an embedded system built using
 
 ## 🎯 Objectives
 
-- Display real-time date and time using RTC  
-- Allow user to edit RTC time and medicine schedules  
-- Monitor medicine timings continuously  
-- Generate alerts when medicine time occurs  
-- Provide interrupt-based user control  
+- 🕒 Display real-time date and time using RTC  
+- ⚙️ Allow user to edit RTC time and medicine schedules  
+- 🔄 Monitor medicine timings continuously  
+- 🚨 Generate alerts when medicine time occurs  
+- 🎛️ Provide interrupt-based user control  
 
 ---
 
 ## 🧠 Working Principle
 
-### 1️⃣ Edit Mode (Switch-2 / EINT1)
+### 1️⃣ Edit Mode (Switch-2 / EINT1) ⚙️
 
 ![Menu](menu.png)
 
-- Press Switch-2 to enter configuration mode  
-- Edit RTC time and medicine schedule using keypad  
+- 🔘 Press Switch-2 to enter configuration mode  
+- ✏️ Edit RTC time and medicine schedule using keypad  
 
 ![RTC Edit](images/rtc time edit.png)
 
 ![Medicine Edit](medicine_edit.png)
 
-- Store data in controller memory  
+- 💾 Store data in controller memory  
 
 ---
 
-### 2️⃣ Real-Time Monitoring
+### 2️⃣ Real-Time Monitoring ⏱️
 
 ![Display](display.png)
 
-- Continuously read RTC time  
-- Compare with stored medicine timings  
+- 🔄 Continuously read RTC time  
+- 🔍 Compare with stored medicine timings  
 
 ---
 
-### 3️⃣ Alert Generation
+### 3️⃣ Alert Generation 🚨
 
 ![Medicine Forward](medicine_time_forward.png)
 
+- ⬆️ If medicine is in front → move forward  
+
 ![Medicine Backward](medicine_time_backward.png)
 
-- LCD displays **"TIME FOR MEDICINE"**  
-- Buzzer turns ON (periodic alert)  
+- ⬇️ If medicine is behind → move backward  
+
+- 📺 LCD displays **"TIME FOR MEDICINE"**  
+- 🔔 Buzzer turns ON (periodic alert)
 
 ---
 
-### 4️⃣ Buzzer Control (Switch-1 / EINT0)
+### 4️⃣ Buzzer Control (Switch-1 / EINT0) 🔕
 
 ![Medicine Taken](medicine_taken.png)
 
-- Press Switch-1 to stop the buzzer  
-- Alert is cleared and system returns to normal mode  
+- 🔘 Press Switch-1 to stop the buzzer  
+- ✅ Alert is cleared and system returns to normal mode  
 
 ---
 
-### 5️⃣ Auto Stop
+### 5️⃣ Auto Stop ⏳
 
 ![Failed](failed.png)
 
-- Buzzer stops automatically after a fixed time if no action  
+- ⏱️ Buzzer stops automatically after a fixed time if no action  
 
 ---
 
-## 🧩 Block Diagram
+## 🧩 Block Diagram 🧱
 
-![Block Diagram](images/block_diagram.png)
+![Block Diagram](block_diagram.png)
 
 **Inputs:** RTC, Keypad, Switch-1, Switch-2  
 **Controller:** LPC2148  
@@ -86,25 +93,25 @@ The User Configurable Medicine Reminder System is an embedded system built using
 
 ---
 
-## 🔌 Circuit Diagram
+## 🔌 Circuit Diagram ⚡
 
 ![Circuit Diagram](circuit_diagram.png)
 
 ---
 
-## 🛠️ Hardware Requirements
+## 🛠️ Hardware Requirements 🧰
 
-- LPC2148 Microcontroller  
-- 16×2 LCD  
-- 4×4 Matrix Keypad  
-- Buzzer  
-- Push Buttons (Switch-1 & Switch-2)  
-- RTC Module  
-- USB-UART / DB9  
+- 🧠 LPC2148 Microcontroller  
+- 📺 16×2 LCD  
+- 🔢 4×4 Matrix Keypad  
+- 🔔 Buzzer  
+- 🔘 Push Buttons (Switch-1 & Switch-2)  
+- 🕒 RTC Module  
+- 🔌 USB-UART / DB9  
 
 ---
 
-## 💻 Software Requirements
+## 💻 Software Requirements 🧑‍💻
 
 - Embedded C  
 - Keil µVision  
@@ -119,45 +126,47 @@ The User Configurable Medicine Reminder System is an embedded system built using
 - ✏️ Editable time and schedule  
 - ⏰ Medicine reminder alerts  
 - 🔔 Buzzer notification system  
-- 🎛️ Efficient real-time operation  
+- ⚙️ Efficient real-time operation  
 - 📺 LCD user interface  
 
 ---
 
-## 🔑 Switch Functions
+## 🔑 Switch Functions 🔘
 
 | Switch | Interrupt | Function |
 |--------|----------|---------|
-| Switch-1 | EINT0 | Stop buzzer (Alert OFF) |
-| Switch-2 | EINT1 | Enter edit/configuration mode |
+| 🔘 Switch-1 | EINT0 | 🔕 Stop buzzer (Alert OFF) |
+| 🔘 Switch-2 | EINT1 | ⚙️ Enter edit/configuration mode |
 
 ---
 
-## 🧭 User Guide
+## 🧭 User Guide 🧑‍⚕️
 
-1. Power ON → LCD shows current time  
-2. Press **Switch-2** → Enter edit mode  
-3. Set time and medicine schedule  
-4. Wait for alert  
-5. Press **Switch-1** → Stop buzzer  
+1. 🔌 Power ON → LCD shows current time  
+2. 🔘 Press **Switch-2** → Enter edit mode  
+3. ✏️ Set time and medicine schedule  
+4. ⏳ Wait for alert  
+5. 🔕 Press **Switch-1** → Stop buzzer  
 
 ---
 
-## 💡 Future Enhancements
+## 💡 Future Enhancements 🚀
 
-- Support for multiple medicine reminders  
-- EEPROM/Flash storage for permanent data saving  
-- GSM module for SMS alerts  
-- Mobile app integration (IoT-based monitoring)  
-- Voice alert system  
-- Low power optimization for battery operation  
+- 💊 Multiple medicine reminders  
+- 💾 EEPROM/Flash storage  
+- 📡 GSM module for SMS alerts  
+- 📱 Mobile app integration (IoT)  
+- 🔊 Voice alert system  
+- 🔋 Low power optimization  
 
 ---
 
 ## 👨‍💻 Developed By
 
-**Manikanta Karthik Pantham**  
-Electronics & Communication Engineering  
+**Manikanta Karthik Pantham**
+
+- 💻 Developed a Medicine Reminder System using LPC2148 ARM7 microcontroller with Embedded C  
+- ⚙️ Implemented RTC monitoring, LCD interface, keypad input, and buzzer alerts  
 
 ---
 
