@@ -1,5 +1,7 @@
 # 💊 USER CONFIGURABLE MEDICINE REMINDER SYSTEM
 
+![Title](title.png)
+
 An embedded system using LPC2148 that provides real-time medicine reminders with interrupt-based control, LCD interface, and buzzer alerts for reliable and user-friendly operation.
 
 ---
@@ -7,6 +9,8 @@ An embedded system using LPC2148 that provides real-time medicine reminders with
 ## 📌 Project Overview
 
 The User Configurable Medicine Reminder System is an embedded system built using the LPC2148 microcontroller and RTC to provide timely medicine alerts. It allows users to set and edit medicine schedules, and generates alerts using a buzzer and LCD display when the time matches.
+
+---
 
 ## 🎯 Objectives
 
@@ -21,32 +25,70 @@ The User Configurable Medicine Reminder System is an embedded system built using
 ## 🧠 Working Principle
 
 ### 1️⃣ Edit Mode (Switch-2 / EINT1)
+
+![Menu](menu.png)
+
 - Press Switch-2 to enter configuration mode  
 - Edit RTC time and medicine schedule using keypad  
+
+![RTC Edit](images/rtc time edit.png)
+
+![Medicine Edit](medicine_edit.png)
+
 - Store data in controller memory  
 
+---
+
 ### 2️⃣ Real-Time Monitoring
+
+![Display](display.png)
+
 - Continuously read RTC time  
 - Compare with stored medicine timings  
 
+---
+
 ### 3️⃣ Alert Generation
+
+![Medicine Forward](medicine_time_forward.png)
+
+![Medicine Backward](medicine_time_backward.png)
+
 - LCD displays **"TIME FOR MEDICINE"**  
 - Buzzer turns ON (periodic alert)  
 
+---
+
 ### 4️⃣ Buzzer Control (Switch-1 / EINT0)
+
+![Medicine Taken](medicine_taken.png)
+
 - Press Switch-1 to stop the buzzer  
 - Alert is cleared and system returns to normal mode  
 
+---
+
 ### 5️⃣ Auto Stop
+
+![Failed](failed.png)
+
 - Buzzer stops automatically after a fixed time if no action  
 
 ---
 
 ## 🧩 Block Diagram
 
+![Block Diagram](images/block_diagram.png)
+
 **Inputs:** RTC, Keypad, Switch-1, Switch-2  
 **Controller:** LPC2148  
 **Outputs:** LCD, Buzzer  
+
+---
+
+## 🔌 Circuit Diagram
+
+![Circuit Diagram](circuit_diagram.png)
 
 ---
 
@@ -122,5 +164,7 @@ Electronics & Communication Engineering
 ## 📜 License
 
 This project is for academic purposes. Free to modify with proper credit.
+
+---
 
 ⭐ If you find this useful, give it a star!
